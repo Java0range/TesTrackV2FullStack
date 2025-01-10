@@ -7,10 +7,10 @@ const isAdmin = ref(false)
 
 const userStore = useUserStore()
 
-const props = defineProps({
-  drawerClose: Function,
-  usersUpdate: Function
-})
+const props = defineProps<{
+  drawerClose: () => void;
+  usersUpdate: () => void;
+}>();
 
 const username = ref<string>("")
 const password = ref<string>("")

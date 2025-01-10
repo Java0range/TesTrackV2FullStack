@@ -1,15 +1,16 @@
 <script setup lang="ts">
-defineProps({
-  searchTaskClicked: Function,
-  onChangeNumber: Function
-})
+import { ref } from 'vue'
+
+const emit = defineEmits(["onChangeNumber", "searchTaskClicked"])
+
+const selectedNumber = ref<string>("1")
 </script>
 
 <template>
 <div class="flex gap-5 max-sm:flex-col">
   <div class="flex items-center justify-center gap-2">
     <h3>Тип:</h3>
-    <select @change="onChangeNumber" class="px-3 py-2 border rounded-md outline-none w-full">
+    <select v-model="selectedNumber" @change="emit('onChangeNumber', selectedNumber)" class="px-3 py-2 border rounded-md outline-none w-full">
       <option value="1">1. Анализ информационных моделей</option>
       <option value="2">2. Таблицы истинности логических выражений</option>
       <option value="3">3. Поиск и сортировка в базах данных</option>
@@ -48,7 +49,7 @@ defineProps({
   </div>
 </div>
 <div class="flex items-center justify-center mt-2">
-  <button @click="searchTaskClicked" class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-full transition-all">
+  <button @click="emit('searchTaskClicked')" class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-full transition-all">
     Найти все задачи
   </button>
 </div>

@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import axios from 'axios'
-import { inject, ref } from 'vue'
+import { ref } from 'vue'
 
-const { items } = inject("tasksbase")
+const emits = defineEmits(["changeTasks"])
 
 const taskId = ref<string>('')
 
 const searchTask = async () => {
   try {
     const { data } = await axios.get("/taskbase/task/" + taskId.value);
-    items.value = data;
+    emits("changeTasks", data)
   } catch (err) {
     console.log(err);
   }

@@ -4,16 +4,16 @@ import axios from 'axios'
 import { useUserStore } from '@/stores/user.ts'
 
 
-const props = defineProps({
-  drawerClose: Function,
-  updateTests: Function
-})
+const props = defineProps<{
+  drawerClose: () => void;
+  updateTests: () => void;
+}>();
 
 const useStore = useUserStore()
 
 const testName = ref<string>("")
 
-const tasks = ref([])
+const tasks = ref<Array<string>>([])
 
 const taskInput = ref<string>("")
 

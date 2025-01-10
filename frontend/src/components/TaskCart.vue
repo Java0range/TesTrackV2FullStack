@@ -43,7 +43,7 @@ const viewOtv = ref<boolean>(false);
       <tbody>
       <tr
         v-for="row in table"
-        :key="row"
+        :key="Number(row)"
       >
         <td
           class="border-solid border-2 border-black p-1 min-w-12"

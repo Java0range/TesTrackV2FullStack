@@ -1,9 +1,9 @@
 <script setup lang="ts">
-defineProps({
-  closeClicked: Function,
-  closeTestClicked: Function,
-  saveButtonActive: Boolean
-})
+defineProps<{
+  closeClicked: () => void;
+  closeTestClicked: () => void;
+  saveButtonActive: boolean;
+}>()
 </script>
 
 <template>

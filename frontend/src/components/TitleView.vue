@@ -10,10 +10,7 @@ import katex from 'katex';
 import 'katex/dist/katex.min.css';
 
 const props = defineProps({
-  text: {
-    type: String,
-    required: true,
-  },
+  text: String
 });
 
 const renderedContent = ref('');
@@ -24,7 +21,7 @@ watch(
     try {
       // Заменяем LaTeX выражения на отрендеренные HTML
       const latexRegex = /\\\((.*?)\\\)/g; // Регулярное выражение для поиска LaTeX
-      const renderedText = newText.replace(latexRegex, (_, latex) => {
+      const renderedText = (newText ?? '').replace(latexRegex, (_, latex) => {
         return katex.renderToString(latex, {
           throwOnError: false,
         });

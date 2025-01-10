@@ -28,9 +28,9 @@ type activeTestType = {
 const route = useRoute();
 const useStore = useUserStore();
 
-type testType = [number, string, string[]] | [];
+type testType = [number, string, string[]];
 
-const test = ref<testType>([]);
+const test = ref<testType>([1, "", []]);
 
 const otv = ref<string[]>([]);
 
