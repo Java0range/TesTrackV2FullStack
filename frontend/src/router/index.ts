@@ -30,7 +30,7 @@ const checkTeacher = async (
     const json = {
       token: useStore.userToken
     }
-    const { data } = await axios.post("http://192.168.0.15:8000/users/isTeacher", json);
+    const { data } = await axios.post("/users/isTeacher", json);
     if (data === "True") {
       next()
     } else {
