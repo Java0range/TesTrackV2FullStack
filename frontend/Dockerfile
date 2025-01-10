@@ -1,7 +1,8 @@
-FROM node:18-alpine AS build
+FROM node:alpine AS build
 
 COPY package.json package.json
-RUN npm install --verbose
+RUN npm install -g npm@10.9.2
+RUN npm install
 COPY . .
 RUN npm run build
 
