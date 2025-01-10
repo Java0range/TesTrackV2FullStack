@@ -2,7 +2,7 @@ FROM node:alpine AS build
 
 COPY package.json package.json
 RUN npm install -g npm@10.9.2
-RUN npm install
+RUN npm install --no-audit
 COPY . .
 RUN npm run build
 
