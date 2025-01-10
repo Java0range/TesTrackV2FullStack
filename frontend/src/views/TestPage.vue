@@ -57,6 +57,8 @@ const resultsList = ref<Array<string>>([]);
 
 const drawerActive = ref<boolean>(false);
 
+const saveButtonActive = ref<boolean>(true);
+
 const openDrawer = () => {
   drawerActive.value = true
 }
@@ -66,6 +68,7 @@ const closeDrawer = () => {
 }
 
 const closeTest = async () => {
+  saveButtonActive.value = false;
   const json = {
     test_id: test.value[0],
     result: otv.value,
@@ -111,7 +114,7 @@ watch(activeTestId, async () => {
 </script>
 
 <template>
-<DrawerCloseTest v-if="drawerActive" :close-clicked="closeDrawer" :close-test-clicked="closeTest" />
+<DrawerCloseTest v-if="drawerActive" :close-clicked="closeDrawer" :close-test-clicked="closeTest" :save-button-active="saveButtonActive" />
 <div class="flex flex-col justify-center items-center w-full">
   <div v-if="resultsListActive" class="mt-5 flex flex-col items-center w-2/4 max-sm:w-full justify-center">
     <div class="bg-white shadow-2xl rounded-lg flex flex-col items-center justify-center p-5">

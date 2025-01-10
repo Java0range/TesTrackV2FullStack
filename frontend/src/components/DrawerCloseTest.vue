@@ -1,7 +1,8 @@
 <script setup lang="ts">
 defineProps({
   closeClicked: Function,
-  closeTestClicked: Function
+  closeTestClicked: Function,
+  saveButtonActive: Boolean
 })
 </script>
 
@@ -14,7 +15,7 @@ defineProps({
       <button @click="closeClicked" class="bg-white border-dashed border-2 border-green-500 hover:border-green-400 text-green-500 min-w-20 font-bold py-2 px-4 rounded-full transition-all">
         Нет
       </button>
-      <button @click="closeTestClicked" class="bg-green-500 hover:bg-green-400 hover:border-green-400 border-solid border-2 border-green-500 text-white min-w-20 font-bold py-2 px-2 rounded-full transition-all">
+      <button :disabled="!saveButtonActive" @click="closeTestClicked" class="hover:bg-green-400 hover:border-green-400 border-solid border-2 border-green-500 bg-green-500 text-white min-w-20 font-bold py-2 px-2 rounded-full transition-all disabled:bg-slate-400 disabled:border-slate-400">
         Да
       </button>
     </div>
