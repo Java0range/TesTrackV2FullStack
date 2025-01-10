@@ -15,7 +15,7 @@ app.include_router(tests)
 app.include_router(results)
 
 
-origins = ["http://localhost:5173", "http://192.168.0.15:5173"]
+origins = ["http://localhost:5173", "http://82.148.30.194:5173"]
 
 app.add_middleware(
     CORSMiddleware,

@@ -11,7 +11,7 @@ onMounted(async () => {
   userStore.userToken = localCart ? JSON.parse(localCart) : [];
 })
 
-axios.defaults.baseURL = "http://192.168.0.15:8000"
+axios.defaults.baseURL = "http://82.148.30.194/api"
 </script>
 
 <template>
