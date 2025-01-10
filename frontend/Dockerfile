@@ -1,8 +1,6 @@
-FROM node:alpine AS build
+FROM node:18-alpine AS build
 
 COPY package.json package.json
-RUN npm cache clean --force
-RUN rm -rf node_modules
 RUN npm install --verbose
 COPY . .
 RUN npm run build
