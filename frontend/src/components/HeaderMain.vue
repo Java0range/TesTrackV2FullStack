@@ -21,7 +21,7 @@ const quit = () => {
   <div class="w-3/4 max-sm:w-full flex justify-between items-center">
     <div class="flex items-center">
       <img src="/favicon.ico" alt="logo" class="w-8 h-8" />
-      <b>TesTrackV2 Beta</b>
+      <b>TesTrackV2</b>
     </div>
     <div class="flex max-sm:flex-col items-center gap-3 uppercase opacity-70 text-base">
       <router-link to="/tests" class="hover:opacity-100 cursor-pointer hover:font-medium transition-all" :class="isActive === 'Тесты' ? 'font-bold' : ''">Тесты</router-link>
