@@ -23,5 +23,7 @@ services:
   frontend:
     build:
       context: ./frontend
+    depends_on:
+      - backend
     networks:
       - dev
