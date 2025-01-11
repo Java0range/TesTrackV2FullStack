@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TitleView from '@/components/TitleView.vue'
-import { ref } from 'vue'
 
 type filesType = {
   url: string,
@@ -21,7 +20,6 @@ defineProps({
   otv: String,
   type: String
 })
-const viewOtv = ref<boolean>(false);
 </script>
 
 <template>
@@ -63,9 +61,15 @@ const viewOtv = ref<boolean>(false);
         {{ item.name }}
       </a>
     </div>
-    <button v-if="type === 'taskbase'" @click="viewOtv = !viewOtv" class="mt-3 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-full transition-all">
-      {{ viewOtv ? otv : "Показать ответ" }}
-    </button>
+      <details class="p-4 [&_svg]:open:-rotate-180">
+        <summary class="flex cursor-pointer list-none items-center gap-4">
+            <svg class="rotate-0 transform text-green-500 transition-all duration-300" fill="none" height="20" width="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          <h3>Показать ответ</h3>
+        </summary>
+        <b>{{ otv }}</b>
+      </details>
   </div>
 </template>
 
