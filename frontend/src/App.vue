@@ -8,10 +8,10 @@ const userStore = useUserStore()
 
 onMounted(async () => {
   const localCart = localStorage.getItem("userToken");
-  userStore.userToken = localCart ? JSON.parse(localCart) : [];
+  userStore.userToken = localCart ? JSON.parse(localCart) : "";
 })
 
-axios.defaults.baseURL = "http://82.148.19.224/api"
+axios.defaults.baseURL = "http://127.0.0.1:8000";
 </script>
 
 <template>

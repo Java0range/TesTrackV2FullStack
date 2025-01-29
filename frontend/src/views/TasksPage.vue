@@ -68,7 +68,7 @@ const changeTasks = (tasks: Array<itemsType>) => {
       <SearchAllTasks v-if="slider" @search-task-clicked="searchTasks" @on-change-number="onChangeNumber" />
       <SearchTask v-if="!slider" @change-tasks="changeTasks" />
     </div>
-    <div class="overflow-hidden z-10 float-left">
+    <div class="overflow-hidden z-10 w-full">
       <TaskList :items="items" />
     </div>
   </div>

@@ -26,7 +26,7 @@ defineProps({
 </script>
 
 <template>
-<div class="flex flex-col justify-center items-center gap-5">
+<div class="flex flex-col justify-center items-center gap-5 max-w-full">
   <TaskCart
     v-for="item in items"
     :key="item.task_id"

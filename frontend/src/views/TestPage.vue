@@ -107,6 +107,7 @@ watch(activeTestId, async () => {
   try {
     const { data } = await axios.get("/taskbase/task/" + activeTestId.value);
     activeTest.value = data[0];
+    otvInput.value = otv.value[test.value[2].indexOf(activeTestId.value)];
   } catch (err) {
     console.log(err);
   }
